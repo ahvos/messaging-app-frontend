@@ -14,6 +14,7 @@ function App() {
     const [messages, setMessages] = useState([])
     //const [user, setUser] = useState(null)
     const [{ user }, dispatch] = useStateValue()
+    const [inCall, setInCall] = useState(false);
     
      
     useEffect(() => {
@@ -49,6 +50,8 @@ function App() {
                     <Chat messages={messages}/>
                 </div>
             )}
+
+            {inCall ? "We are in the call!" : "Waiting to join call!" }
         </div>
     );
 }
