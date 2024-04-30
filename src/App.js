@@ -58,10 +58,10 @@ function App() {
             ) : (
                 <Button
                     variant="contained"
-                    color="primary"
+                    className="customButton"
                     onClick={() => setInCall(true)}
                 >
-                Join Call </Button>
+                Call </Button>
             )}
         </div>
     );
