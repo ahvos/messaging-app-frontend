@@ -7,6 +7,8 @@ import { useStateValue } from './components/StateProvider';
 
 import React, { useEffect, useState } from 'react'
 import Pusher from 'pusher-js'
+import { Button } from "@material-ui/core";
+import VideoCall from "./components/VideoCall";
 
 
 
@@ -51,7 +53,16 @@ function App() {
                 </div>
             )}
 
-            {inCall ? "We are in the call!" : "Waiting to join call!" }
+            {inCall ? (
+                <VideoCall setInCall={setInCall} />
+            ) : (
+                <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={() => setInCall(true)}
+                >
+                Join Call </Button>
+            )}
         </div>
     );
 }
