@@ -6,3 +6,4 @@ const token = "007eJxTYNCTDfzxbL+muVjS/Qgj8+7y2D/HCpdGPpSZ0u5zijvAfr0Cg0VKkqVFso
 export const config = { mode: "rtc", codec: "vp8", appId: appId, token: token };
 export const useClient = createClient(config);
 export const useMicrophoneAndCameraTracks = createMicrophoneAndCameraTracks();
+export const channelName = "mainChan";
