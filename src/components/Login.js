@@ -23,9 +23,10 @@ const Login = () => {
     return (
         <div className="login">
             <div className="login__container">
-                <img src="logo512.png" alt="whatsapp" />
+                <img src="https://images.emojiterra.com/openmoji/v15.0/1024px/1f48c.png" alt="whatsapp" />
                 <div className="login__text">
-                    <h1> Signin </h1>
+                    <h1> Login </h1>
+
                 </div>
                 <Button onClick={signIn}>Sign In with Google</Button>
             </div>

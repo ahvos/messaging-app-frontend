@@ -6,11 +6,12 @@ import { config, useClient, useMicrophoneAndCameraTracks, channelName } from "./
 
 
 export default function VideoCall(props) {
-    const { setInCall } = props;
+    const { setInCall, handleCloseCall } = props;
     const [users, setUsers] = useState([]);
     const [start, setStart] = useState(false);
     const client = useClient();
     const { ready, tracks } = useMicrophoneAndCameraTracks();
+    
 
     useEffect(() => { 
         let init = async (name) => { 
@@ -69,10 +70,10 @@ export default function VideoCall(props) {
         <Grid container direction="column" style={{ height: "100%" }}>
             <Grid item style={{ height: "10%" }}>
                 {ready && tracks && (
-                    <Controls tracks={tracks} setStart={setStart} setInCall={setInCall} />
+                    <Controls tracks={tracks} setStart={setStart} setInCall={setInCall} handleCloseCall={handleCloseCall} />
                 )}
             </Grid>
-            <Grid item style={{ height: "90%" }}>
+            <Grid item style={{ height: "90%"}}>
                 {start && tracks && <Video tracks={tracks} users={users} />}
             </Grid>
         </Grid>

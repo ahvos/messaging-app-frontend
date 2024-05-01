@@ -32,9 +32,9 @@ const Chat = ({ messages, handleJoinCall }) => {
     return (
         <div className="chat">
             <div className="chat__header">
-                <Avatar src={`https://images.unsplash.com/photo-1591160690555-5debfba289f0?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z29sZGVuJTIwcmV0cmlldmVyJTIwcHVwcHl8ZW58MHx8MHx8fDA%3D`} />
+                <Avatar src={`https://www.shutterstock.com/image-vector/group-three-friends-taking-selfie-600nw-666579388.jpg`} />
                 <div className="chat__headerInfo">
-                    <h3> Group Chat </h3>
+                    <h3> Design Crew </h3>
                     <p> last seen {" "}
                         {messages[messages.length -1]?.timestamp}
                     </p>

@@ -18,7 +18,7 @@ const Sidebar = ({ messages }) => {
     return (
         <div className="sidebar">
             <div className="sidebar__header">
-                <Avatar src="{user?.photoURL}"/>
+                <Avatar src="https://media.tenor.com/AVCT2wSkaWUAAAAe/elmo-fire.png"/>
                 <div className="sidebar__headerRight">
                     <IconButton>
                         <DonutLargeIcon />

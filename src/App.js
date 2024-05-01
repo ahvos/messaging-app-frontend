@@ -9,7 +9,8 @@ import Chat from './components/Chat';
 import axios from './components/axios'
 import Login from './components/Login';
 import { useStateValue } from './components/StateProvider';
-import VideoCall from "./videoComponents/VideoCall";
+import VideoCall from "./components/VideoCall";
+
 
 
 
@@ -46,27 +47,29 @@ function App() {
 
 
     const handleJoinCall = () => {
-        setInCall(true);
+        setInCall(true)
         setShowCallWindow(true);
         const newWindow = window.open('', '_blank', 'width=1000,height=800');
         newWindow.document.body.style.backgroundColor = '#f0f0f0';
         newWindow.document.body.innerHTML = `<div id="root"></div>`;
+        
         ReactDOM.render(
             <React.StrictMode>
-                <VideoCall setInCall={setInCall} />
+                    <VideoCall setInCall={setInCall} handleCloseCall={handleCloseCall}/>
             </React.StrictMode>,
             newWindow.document.getElementById('root')
         );
+
         setCallWindow(newWindow);
     };
 
     const handleCloseCall = () => {
-        if (callWindow) {
+        if (callWindow && !callWindow.closed) {
             callWindow.close();
             setCallWindow(null);
             setInCall(false);
+            setShowCallWindow(false);
         }
-        setShowCallWindow(false);
     };
            
 

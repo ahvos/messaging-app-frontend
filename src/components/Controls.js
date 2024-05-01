@@ -8,22 +8,9 @@ import VideocamIcon from "@material-ui/icons/Videocam";
 import VideocamOffIcon from "@material-ui/icons/VideocamOff";
 import CallEndIcon from '@material-ui/icons/CallEnd';
 
-const useStyles = makeStyles((theme) => ({
-    buttonContainer: {
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        marginTop: theme.spacing(2),
-    },
-    button: {
-        margin: theme.spacing(1),
-    },
-}));
-
 export default function Controls(props) {
     const client = useClient();
-    const classes = useStyles();
-    const { tracks, setStart, setInCall } = props;
+    const { tracks, setStart, setInCall, handleCloseCall } = props;
     const [trackState, setTrackState] = useState({ video: true, audio: true });
   
     const mute = async (type) => {
@@ -75,7 +62,10 @@ export default function Controls(props) {
                 <Button
                     variant="contained"
                     color="default"
-                    onClick={() => leaveChannel()}
+                    onClick={() => {
+                        leaveChannel();
+                        handleCloseCall();
+                    }}
                 >
                     Leave
                     <CallEndIcon />
@@ -83,40 +73,4 @@ export default function Controls(props) {
             </Grid>
         </Grid>
     );
-    
-    
-
-    /*
-    return (
-        <div className={classes.buttonContainer}>
-            <Button
-                variant="contained"
-                color={trackState.audio ? "primary" : "secondary"}
-                className={classes.button}
-                onClick={() => mute("audio")}
-            >
-                {trackState.audio ? <MicIcon /> : <MicOffIcon />}
-
-            </Button>
-            <Button
-                variant="contained"
-                color={trackState.video ? "primary" : "secondary"}
-                className={classes.button}
-                onClick={() => mute("video")}
-            >
-                {trackState.video ? <VideocamIcon /> : <VideocamOffIcon />}
-                
-            </Button>
-            <Button
-                variant="contained"
-                color="default"
-                className={classes.button}
-                onClick={() => leaveChannel()}
-            >
-                <CallEndIcon />
-                Leave
-            </Button>
-        </div>
-    );
-    */
 }
