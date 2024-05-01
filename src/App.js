@@ -18,6 +18,7 @@ function App() {
     const [{ user }, dispatch] = useStateValue()
     const [inCall, setInCall] = useState(false);
     const [showCallWindow, setShowCallWindow] = useState(false);
+    const [callWindow, setCallWindow] = useState(null);
     
      
     useEffect(() => {
@@ -43,11 +44,11 @@ function App() {
     }, [messages])
     console.log(messages)
 
-    
+
     const handleJoinCall = () => {
         setInCall(true);
         setShowCallWindow(true);
-        const newWindow = window.open('', '_blank', 'width=600,height=400');
+        const newWindow = window.open('', '_blank', 'width=1000,height=800');
         newWindow.document.body.style.backgroundColor = '#f0f0f0';
         newWindow.document.body.innerHTML = `<div id="root"></div>`;
         ReactDOM.render(
@@ -56,6 +57,16 @@ function App() {
             </React.StrictMode>,
             newWindow.document.getElementById('root')
         );
+        setCallWindow(newWindow);
+    };
+
+    const handleCloseCall = () => {
+        if (callWindow) {
+            callWindow.close();
+            setCallWindow(null);
+            setInCall(false);
+        }
+        setShowCallWindow(false);
     };
            
 
@@ -64,27 +75,8 @@ function App() {
             { !user ? <Login /> : (
                 <div className="app__body">
                     <Sidebar messages={messages}/>
-                    <Chat messages={messages}/>
+                    <Chat messages={messages} handleJoinCall={handleJoinCall} />
                 </div>
-            )}
-
-    
-            {inCall ? (
-                <Button
-                    variant="contained"
-                    className="customButton"
-                    onClick={() => setInCall(false)} // End call on button click
-                >
-                    End Call
-                </Button>
-            ) : (
-                <Button
-                    variant="contained"
-                    className="customButton"
-                    onClick={handleJoinCall} // Call handleJoinCall on button click
-                >
-                    Call
-                </Button>
             )}
         </div>
     );

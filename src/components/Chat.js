@@ -5,10 +5,11 @@ import './Chat.css'
 import { Avatar, IconButton } from '@material-ui/core'
 import { AttachFile, MoreVert, SearchOutlined, InsertEmoticon } from '@material-ui/icons'
 import MicIcon from '@material-ui/icons/Mic'
+import DuoIcon from '@material-ui/icons/Duo';
 import axios from './axios'
 
 
-const Chat = ({ messages }) => {
+const Chat = ({ messages, handleJoinCall }) => {
     const [seed, setSeed] = useState("")
     const [input, setInput] = useState("")
     const [{ user }, dispatch] = useStateValue()
@@ -72,6 +73,7 @@ const Chat = ({ messages }) => {
                     />
                     <button onClick={sendMessage} type="submit"> send </button>
                 </form>
+                <DuoIcon onClick={handleJoinCall}/>
                 <MicIcon />
             </div>
         </div>

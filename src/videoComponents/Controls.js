@@ -5,7 +5,7 @@ import MicIcon from "@material-ui/icons/Mic";
 import MicOffIcon from "@material-ui/icons/MicOff";
 import VideocamIcon from "@material-ui/icons/Videocam";
 import VideocamOffIcon from "@material-ui/icons/VideocamOff";
-import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import CallEndIcon from '@material-ui/icons/CallEnd';
 
 export default function Controls(props) {
     const client = useClient();
@@ -63,7 +63,7 @@ export default function Controls(props) {
                     onClick={() => leaveChannel()}
                 >
                     Leave
-                    <ExitToAppIcon />
+                    <CallEndIcon />
                 </Button>
             </Grid>
         </Grid>
