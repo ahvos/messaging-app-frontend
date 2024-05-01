@@ -1,5 +1,6 @@
 import React from 'react'
 import './Sidebar.css'
+import './Searchbar.css'
 import SidebarChat from './SidebarChat'
 import { useStateValue } from './StateProvider';
 
@@ -33,7 +34,7 @@ const Sidebar = ({ messages }) => {
             <div className="sidebar__search">
                 <div className="sidebar__searchContainer">
                     <SearchOutlined />
-                    <input placeholder="search or new chat"
+                    <input placeholder="search or add new chat"
                     type="text" />
                 </div>
             </div>
