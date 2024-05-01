@@ -10,7 +10,7 @@ import CallEndIcon from '@material-ui/icons/CallEnd';
 
 export default function Controls(props) {
     const client = useClient();
-    const { tracks, setStart, setInCall, handleCloseCall } = props;
+    const { tracks, setStart, setInCall } = props;
     const [trackState, setTrackState] = useState({ video: true, audio: true });
   
     const mute = async (type) => {
@@ -62,9 +62,7 @@ export default function Controls(props) {
                 <Button
                     variant="contained"
                     color="default"
-                    onClick={() => {
-                        leaveChannel();
-                    }}
+                    onClick={() => leaveChannel()}
                 >
                     Leave
                     <CallEndIcon />
