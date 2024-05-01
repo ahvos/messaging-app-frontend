@@ -6,7 +6,7 @@ import { config, useClient, useMicrophoneAndCameraTracks, channelName } from "./
 
 
 export default function VideoCall(props) {
-    const { setInCall, handleCloseCall } = props;
+    const { setInCall } = props;
     const [users, setUsers] = useState([]);
     const [start, setStart] = useState(false);
     const client = useClient();
@@ -70,7 +70,7 @@ export default function VideoCall(props) {
         <Grid container direction="column" style={{ height: "100%" }}>
             <Grid item style={{ height: "10%" }}>
                 {ready && tracks && (
-                    <Controls tracks={tracks} setStart={setStart} setInCall={setInCall} handleCloseCall={handleCloseCall} />
+                    <Controls tracks={tracks} setStart={setStart} setInCall={setInCall} />
                 )}
             </Grid>
             <Grid item style={{ height: "90%"}}>

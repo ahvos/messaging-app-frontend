@@ -64,7 +64,6 @@ export default function Controls(props) {
                     color="default"
                     onClick={() => {
                         leaveChannel();
-                        handleCloseCall();
                     }}
                 >
                     Leave

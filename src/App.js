@@ -50,17 +50,15 @@ function App() {
         setInCall(true)
         setShowCallWindow(true);
         const newWindow = window.open('', '_blank', 'width=1000,height=800');
-        newWindow.document.body.style.backgroundColor = '#f0f0f0';
+        newWindow.document.body.style.backgroundColor = '##e5d9c7';
         newWindow.document.body.innerHTML = `<div id="root"></div>`;
         
         ReactDOM.render(
             <React.StrictMode>
-                    <VideoCall setInCall={setInCall} handleCloseCall={handleCloseCall}/>
+                    <VideoCall setInCall={setInCall}/>
             </React.StrictMode>,
             newWindow.document.getElementById('root')
         );
-
-        setCallWindow(newWindow);
     };
 
     const handleCloseCall = () => {
