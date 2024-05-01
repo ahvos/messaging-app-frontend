@@ -38,7 +38,7 @@ export default function Controls(props) {
   
     return (
         <Grid container spacing={2} alignItems="center">
-            <Grid item>
+            <Grid item >
                 <Button
                     variant="contained"
                     color={trackState.audio ? "primary" : "secondary"}

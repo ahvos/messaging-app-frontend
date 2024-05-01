@@ -12,7 +12,7 @@ export default function Video(props) {
     }, [users, tracks]);
   
     return (
-        <Grid container style={{ height: "100%" }} alignItems="center">
+        <Grid container style={{ height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }} >
             <Grid item xs={gridSpacing}>
                 <AgoraVideoPlayer
                     videoTrack={tracks[1]}
