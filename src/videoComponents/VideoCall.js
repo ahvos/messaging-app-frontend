@@ -67,12 +67,12 @@ export default function VideoCall(props) {
 
     return (
         <Grid container direction="column" style={{ height: "100%", justifyContent: "center", alignItems: "center"}}>
-            <Grid item style={{ height: "10%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <Grid item style={{ height: "10%" }}>
                 {ready && tracks && (
                     <Controls tracks={tracks} setStart={setStart} setInCall={setInCall} />
                 )}
             </Grid>
-            <Grid item style={{ height: "90%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <Grid item style={{ height: "90%", alignItems: "center"}}>
                 {start && tracks && <Video tracks={tracks} users={users} />}
             </Grid>
         </Grid>
