@@ -12,7 +12,7 @@ const SidebarChat = ({ messages }) => {
 
     return (
     <div className="sidebarChat">
-        <Avatar src={`https://hips.hearstapps.com/hmg-prod/images/jennie-jennie-for-calvin-klein-event-photo-credit-joongsan-yang-3-645c18b3e01ea.jpg?crop=1xw:0.4422560783075466xh;center,top`} />
+        <Avatar src={`https://images.unsplash.com/photo-1591160690555-5debfba289f0?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z29sZGVuJTIwcmV0cmlldmVyJTIwcHVwcHl8ZW58MHx8MHx8fDA%3D`} />
         <div className="sidebarChat__info">
             <h2> GROUP CHAT </h2>
             <p> {messages[messages.length -1]?.message} </p>
