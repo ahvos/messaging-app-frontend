@@ -19,7 +19,6 @@ function App() {
     const [{ user }, dispatch] = useStateValue()
     const [inCall, setInCall] = useState(false);
     const [showCallWindow, setShowCallWindow] = useState(false);
-    const [callWindow, setCallWindow] = useState(null);
     
      
     useEffect(() => {
@@ -59,15 +58,6 @@ function App() {
             </React.StrictMode>,
             newWindow.document.getElementById('root')
         );
-    };
-
-    const handleCloseCall = () => {
-        if (callWindow && !callWindow.closed) {
-            callWindow.close();
-            setCallWindow(null);
-            setInCall(false);
-            setShowCallWindow(false);
-        }
     };
            
 
